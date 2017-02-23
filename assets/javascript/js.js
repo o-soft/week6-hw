@@ -21,10 +21,11 @@ var giftastic = {
 var ajax = {
 
 		runAjax: function() {
-			$("button").on("click", function() {
-				var cartoons = 'anime';
+			// $("button").on("click", function() {
+				var cartoons = 'cartoons';
+				// = $(this).attr("data-name");
 				var queryURL = "http://api.giphy.com/v1/gifs/search?q=" +
-		        cartoons + "&limit=10&rating=pg&api_key=dc6zaTOxFJmzC";
+		        cartoons + "&limit=10&rating=pg-13&api_key=dc6zaTOxFJmzC";
 
 
 		        console.log(queryURL);
@@ -61,12 +62,13 @@ var ajax = {
 			          	}	
 
 		         	})
-		   	})
+		   	// })
 		 }
 	}	    
 
 			
 $(document).ready(function(){
+	$("#new-cartoonBtn").on("click", "button", ajax.runAjax);
 	giftastic.createBtn();
-	ajax.runAjax();
+	// ajax.runAjax();
 })
