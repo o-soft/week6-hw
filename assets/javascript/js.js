@@ -21,47 +21,48 @@ var giftastic = {
 var ajax = {
 
 		runAjax: function() {
-			var cartoons = 'anime';
-			var queryURL = "http://api.giphy.com/v1/gifs/search?q=" +
-	        cartoons + "&limit=10&rating=pg&api_key=dc6zaTOxFJmzC";
+			$("button").on("click", function() {
+				var cartoons = 'anime';
+				var queryURL = "http://api.giphy.com/v1/gifs/search?q=" +
+		        cartoons + "&limit=10&rating=pg&api_key=dc6zaTOxFJmzC";
 
 
-	        console.log(queryURL);
+		        console.log(queryURL);
 
-	        	        // perform ajax requests
-	      $.ajax({
-	          url: queryURL,
-	          method: "GET"
-	        })
-	        // perform another function after its done
-		        .done(function(response) {
-	         // create images
-	         //set limit in gipht documentation 
-	         		console.log(response);
-	         		var results = response.data;
+		        	        // perform ajax requests
+		      $.ajax({
+		          url: queryURL,
+		          method: "GET"
+		        })
+		        // perform another function after its done
+			        .done(function(response) {
+		         // create images
+		         //set limit in gipht documentation 
+		         		console.log(response);
+		         		var results = response.data;
 
-		          	for (var i = 0; i < results.length; i++) {
-		          		console.log("i am in the for loop "+i);
-			          	var imgContainer = $("<div>");
+			          	for (var i = 0; i < results.length; i++) {
+			          		console.log("i am in the for loop "+i);
+				          	var imgContainer = $("<div>");
 
-			            var rating = results[i].rating;
-			            console.log(rating);
+				            var rating = results[i].rating;
+				            console.log(rating);
 
-			            var p = $("<p>").text("Rating: " + rating);
+				            var p = $("<p>").text("Rating: " + rating);
 
-			            var cartoonImage = $("<img>");
-			            cartoonImage.attr("src", results[i].images.fixed_height.url)
-			            
-			            imgContainer.append(cartoonImage);
-			            imgContainer.append(p);
+				            var cartoonImage = $("<img>");
+				            cartoonImage.attr("src", results[i].images.fixed_height.url)
+				            
+				            imgContainer.append(cartoonImage);
+				            imgContainer.append(p);
 
-			            $("#cartoonsAppear").append(imgContainer);
+				            $("#cartoonsAppear").append(imgContainer);
 
-		          	}	
+			          	}	
 
-	         	})
-	   
-	    }
+		         	})
+		   	})
+		 }
 	}	    
 
 			
