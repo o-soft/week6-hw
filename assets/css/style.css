@@ -1,0 +1,46 @@
+body {
+	text-align: center;
+
+}
+
+img {
+	height: 100px;
+	width: 250px;
+	display: inline-block;
+}
+
+button {
+	display: inline-block;
+	color: blue
+	margin-left: 5px;
+}
+
+#new-cartoonBtn {
+	margin-bottom: 20px;
+	margin-top: 20px;
+}
+
+label {
+	font-size: 20px;
+	margin: auto;
+	margin-bottom: 10px;
+}
+
+input {
+	font-size: 15px:
+	margin-bottom: 10px;
+
+}
+
+#addCartoon {
+	margin-top: 10px;
+}
+
+h1 {
+	font-size: 35px;
+	text-align: center;
+	background-color: green;
+	padding: 15px;
+
+
+}
